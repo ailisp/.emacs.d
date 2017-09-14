@@ -21,10 +21,10 @@
   (unless (package-installed-p package)
     (package-install package)))
 
-(defun require-or-install (package)
+(defun require-or-install (package &optional package-to-install)
   (or (require package nil t)
       (progn
-	(package-install-with-refresh package)
+	(package-install-with-refresh (or package-to-install package))
 	(require package))))
 
 
