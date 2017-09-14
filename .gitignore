@@ -1,0 +1,6 @@
+/*
+!.gitignore
+!/el-get/user
+!/init
+!/init.el
+/*.elc
