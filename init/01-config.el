@@ -1,20 +1,27 @@
 ;;;; Misc config for better default
 
-(tool-bar-mode -1)
-(show-paren-mode 1)
-(global-hl-line-mode 1)
-(global-linum-mode 1)
-(fset 'yes-or-no-p 'y-or-n-p)
+;;; Initial UI
+(setq inhibit-splash-screen t)
 (setq initial-scratch-message "")
+(tool-bar-mode -1)
+(fset 'yes-or-no-p 'y-or-n-p)
+(setq ring-bell-function 'ignore)
+
+;;; Eile open, save and history
 (global-auto-revert-mode 1)
 (require 'saveplace)
 (setq-default save-place t)
-(defalias 'list-buffers 'ibuffer)
-(ido-mode 1)
-(setq ido-separator "\n")
-(setq ido-enable-flex-matching t)
 (recentf-mode 1)
-(setq ring-bell-function 'ignore)
+(setq backup-directory-alist '(("." . "~/.emacs.d/.backups")))
+
+;;; Editing
+(show-paren-mode 1)
+(global-hl-line-mode 1)
+
 ;(setq browse-url-browser-function 'eww-browse-url)
-(setq backup-directory-alist (quote (("." . "~/.backups"))))
-(add-hook 'org-mode-hook (lambda () (setq truncate-lines nil)))
+
+;;; Scrolling
+(setq mouse-wheel-scroll-amount '(1 ((shift) . 1))) ;; one line at a time
+(setq mouse-wheel-progressive-speed nil) ;; don't accelerate scrolling
+(setq mouse-wheel-follow-mouse t) ;; scroll window under mouse
+(setq scroll-step 1) ;; keyboard scroll one line at a time

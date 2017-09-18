@@ -14,10 +14,3 @@ Version 2016-07-13"
   (backward-sexp)
   (kill-sexp))
 
-(defun up-slightly ()
-  (interactive)
-  (scroll-up 1))
-
-(defun down-slightly ()
-  (interactive)
-  (scroll-down 1))

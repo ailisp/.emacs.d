@@ -5,8 +5,6 @@
 (global-set-key (kbd "<f7>") 'recentf-open-files)
 (global-set-key (kbd "<f8>") 'paredit-mode)
 (global-set-key (kbd "C-c s") 'slime-selector)
-(global-set-key [mouse-4] 'down-slightly)
-(global-set-key [mouse-5] 'up-slightly)
 (global-set-key (kbd "C-x k") 'kill-this-buffer)
 (global-set-key (kbd "<M-right>") 'tabbar-forward-tab)
 (global-set-key (kbd "<M-left>") 'tabbar-backward-tab)
