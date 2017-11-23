@@ -3,6 +3,14 @@
 (defvar *emacs-config-directory* (file-name-directory load-file-name))
 
 
+;;; GC
+(let ((normal-gc-cons-threshold (* 20 1024 1024))
+      (init-gc-cons-threshold (* 128 1024 1024)))
+  (setq gc-cons-threshold init-gc-cons-threshold)
+  (add-hook 'after-init-hook
+	    (lambda () (setq gc-cons-threshold normal-gc-cons-threshold))))
+
+
 ;;; Package archieves and helper functions
 (require 'package)
 
@@ -28,59 +36,22 @@
 (package-initialize)
 
 
-;;; init-loader
+;;; Server
+(require 'server)
+(unless (server-running-p)
+  (server-start))
 
+
+;;; Custom file
+(setq custom-file (expand-file-name ".custom.el" user-emacs-directory))
+(when (file-exists-p custom-file)
+  (load custom-file))
+
+
+;;; init-loader
 (require-or-install 'init-loader)
 
 (setq init-loader-show-log-after-init nil)
 
 (init-loader-load
  (expand-file-name "init/" *emacs-config-directory*))
-
-(custom-set-variables
- ;; custom-set-variables was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(ecb-auto-update-methods-after-save t)
- '(ecb-compilation-buffer-names
-   (quote
-    (("*Calculator*")
-     ("*Apropos*")
-     ("*Occur*")
-     ("*shell*")
-     ("\\*[cC]ompilation.*\\*" . t)
-     ("\\*i?grep.*\\*" . t)
-     ("*Help*")
-     ("*eww*")
-     ("\\.*w3\\.*")
-     ("*Completions*")
-     ("*Backtrace*")
-     ("*Compile-Log*")
-     ("*Messages*")
-     ("*scratch*")
-     ("*slime-events*")
-     ("*inferior-lisp*"))))
- '(ecb-compilation-major-modes (quote (compilation-mode slime-repl-mode)))
- '(ecb-compile-window-height 0.3)
- '(ecb-compile-window-width (quote edit-window))
- '(ecb-display-default-dir-after-start t)
- '(ecb-enlarged-compilation-window-max-height 1.0)
- '(ecb-layout-always-operate-in-edit-window (quote (delete-other-windows switch-to-buffer)))
- '(ecb-options-version "2.50")
- '(ecb-other-window-behavior (quote edit-and-compile))
- '(ecb-primary-secondary-mouse-buttons (quote mouse-1--mouse-2))
- '(ecb-select-edit-window-on-redraw t)
- '(ecb-source-path (quote ("~")))
- '(ecb-tip-of-the-day nil)
- '(ecb-windows-width 0.2)
- '(imenu-auto-rescan t)
- '(package-selected-packages
-   (quote
-    (ecb undo-tree tabbar-ruler page-break-lines init-loader))))
-(custom-set-faces
- ;; custom-set-faces was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- )
