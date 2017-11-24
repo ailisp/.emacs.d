@@ -10,7 +10,8 @@
 (global-set-key (kbd "<M-left>") 'tabbar-backward-tab)
 (global-set-key (kbd "<C-backspace>") 'delete-indentation)
 (global-set-key (kbd "C-c m") 'mark-sexp)
-(global-set-key (kbd "<C-M-backspace>")'kill-backward-sexp) 
+(global-set-key (kbd "<C-M-backspace>")'kill-backward-sexp)
+(global-set-key (kbd "C-x 2") 'split-window-conditional)
 ;; TODO: kill/mark/copy/delete/move backward/forward sexp/char/word/line/inner-sexp
 ;;; Local Keybindings
 ;(define-key paredit-mode-map (kbd "C-]") 'paredit-close-round-and-newline)

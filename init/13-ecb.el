@@ -5,6 +5,12 @@
 (set-face-attribute 'ecb-tag-header-face nil
 		    :background  "#008b8b")
 
+(global-set-key (kbd "C-x 3") '(lambda ()
+				 (interactive)
+				 (if ecb-minor-mode
+				     (ecb-toggle-ecb-windows)
+				   (ecb-activate))))
+
 (custom-set-variables
  '(imenu-auto-rescan t)
  '(ecb-auto-update-methods-after-save t)
