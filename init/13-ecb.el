@@ -3,7 +3,7 @@
 (set-face-attribute 'ecb-default-highlight-face nil
                     :background "#464646")
 (set-face-attribute 'ecb-tag-header-face nil
-		    :background  "#008b8b")
+                    :background  "#008b8b")
 
 (global-set-key (kbd "C-x 3") '(lambda ()
 				 (interactive)

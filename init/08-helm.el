@@ -1,3 +1,5 @@
+;;;; Helm
+
 (require-or-install 'helm)
 (require 'helm-config)
 (global-set-key (kbd "C-x r b") 'helm-filtered-bookmarks)
