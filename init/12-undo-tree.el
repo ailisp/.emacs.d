@@ -44,8 +44,3 @@ changes within the current region."
 (define-key undo-tree-map (kbd "M-_") 'undo-tree-redo/tabbar)
 ;; just in case something has defined `redo'...
 (define-key undo-tree-map [remap redo] 'undo-tree-redo/tabbar)
-
-
-
-
-
