@@ -23,7 +23,7 @@
 (show-paren-mode 1)
 (cua-mode t)
 (setq-default tab-width 4
-	      indent-tabs-mode nil)
+              indent-tabs-mode nil)
 
 ;(setq browse-url-browser-function 'eww-browse-url)
 
