@@ -15,6 +15,7 @@
 (require 'saveplace)
 (setq-default save-place t)
 (recentf-mode 1)
+(setq recentf-max-saved-items 3000)
 (setq backup-directory-alist '(("." . "~/.emacs.d/.backups")))
 
 ;;; Editing

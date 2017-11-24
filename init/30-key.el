@@ -2,7 +2,6 @@
 (defalias 'rr 'query-replace-regexp)
 
 ;;; Global Keybindings
-(global-set-key (kbd "<f7>") 'recentf-open-files)
 (global-set-key (kbd "<f8>") 'paredit-mode)
 (global-set-key (kbd "C-c s") 'slime-selector)
 (global-set-key (kbd "C-x k") 'kill-this-buffer)
