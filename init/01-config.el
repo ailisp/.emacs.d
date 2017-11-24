@@ -7,6 +7,7 @@
 (fset 'yes-or-no-p 'y-or-n-p)
 (setq ring-bell-function 'ignore)
 (setq use-dialog-box nil)
+(toggle-scroll-bar nil)
 (defalias 'message-box 'message)
 
 ;;; Eile open, save and history
@@ -20,7 +21,7 @@
 (show-paren-mode 1)
 (cua-mode t)
 (setq-default tab-width 4
-	      indent-tabs-mode ni)
+	      indent-tabs-mode nil)
 
 ;(setq browse-url-browser-function 'eww-browse-url)
 
