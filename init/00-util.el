@@ -19,3 +19,6 @@ Version 2016-07-13"
   (if (>= (* 39 (window-height)) (* 17 (window-width)))
       (split-window-vertically)
     (split-window-horizontally)))
+
+(defun windowsp ()
+  (eql window-system 'w32))

@@ -46,8 +46,11 @@
 
 ;;; Change padding of the tabs
 ;;; we also need to set separator to avoid overlapping tabs by highlighted tabs
+;;; And hide scroll-button
 (custom-set-variables
- '(tabbar-separator (quote (0.5))))
+ '(tabbar-separator (quote (0.5)))
+ '(tabbar-scroll-left-button (quote (("") "")))
+ '(tabbar-scroll-right-button (quote (("") ""))))
 ;; adding spaces
 (defun tabbar-buffer-tab-label (tab)
   "Return a label for TAB.

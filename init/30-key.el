@@ -13,6 +13,3 @@
 (global-set-key (kbd "<C-M-backspace>")'kill-backward-sexp)
 (global-set-key (kbd "C-x 2") 'split-window-conditional)
 ;; TODO: kill/mark/copy/delete/move backward/forward sexp/char/word/line/inner-sexp
-;;; Local Keybindings
-;(define-key paredit-mode-map (kbd "C-]") 'paredit-close-round-and-newline)
-
