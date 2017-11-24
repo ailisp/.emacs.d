@@ -16,7 +16,7 @@
 
 ;;; Editing
 (show-paren-mode 1)
-(global-hl-line-mode 1)
+(cua-mode t)
 
 ;(setq browse-url-browser-function 'eww-browse-url)
 

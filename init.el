@@ -1,3 +1,4 @@
+;;;; -*- lexical-binding: t -*-
 ;;;; Global init, setup package manager, el-get and init-loader
 
 (defvar *emacs-config-directory* (file-name-directory load-file-name))
