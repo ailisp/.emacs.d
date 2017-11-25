@@ -24,6 +24,8 @@
 (cua-mode t)
 (setq-default tab-width 4
               indent-tabs-mode nil)
+(add-hook 'prog-mode-hook
+          (lambda () (add-to-list 'write-file-functions 'delete-trailing-whitespace)))
 
 ;(setq browse-url-browser-function 'eww-browse-url)
 

@@ -1,4 +1,4 @@
-;;;; c
+;;;; C, C++, Objective-C
 
 (c-add-style "my-c-style"
              '("linux"

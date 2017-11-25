@@ -5,11 +5,18 @@
 (set-face-attribute 'ecb-tag-header-face nil
                     :background  "#008b8b")
 
-(global-set-key (kbd "C-x 3") '(lambda ()
-				 (interactive)
-				 (if ecb-minor-mode
-				     (ecb-toggle-ecb-windows)
-				   (ecb-activate))))
+(global-set-key (kbd "C-x 3")
+                '(lambda ()
+                   (interactive)
+                   (when ecb-minor-mode
+                     (ecb-toggle-ecb-windows))))
+
+(global-set-key (kbd "C-x C-3")
+                '(lambda ()
+                   (interactive)
+                   (if ecb-minor-mode
+                       (ecb-deactivate)
+                     (ecb-activate))))
 
 (custom-set-variables
  '(imenu-auto-rescan t)
@@ -20,6 +27,7 @@
      ("*Apropos*")
      ("*Occur*")
      ("*shell*")
+     ("*eshell*")
      ("\\*[cC]ompilation.*\\*" . t)
      ("\\*i?grep.*\\*" . t)
      ("*Help*")
