@@ -1,5 +1,7 @@
 ;;;; golang
 
+(require-or-install 'go-mode)
+
 (defun my-go-mode-hook ()
   (add-hook 'before-save-hook 'gofmt-before-save) ; gofmt before every save
   (setq gofmt-command "goimports")                ; gofmt uses invokes goimports
@@ -23,4 +25,4 @@
 
 ;; Ensure the go specific autocomplete is active in go-mode.
 (with-eval-after-load 'go-mode
-  (require 'go-autocomplete))
+  (require-or-install 'go-autocomplete))
