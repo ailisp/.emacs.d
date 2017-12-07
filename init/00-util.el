@@ -22,3 +22,6 @@ Version 2016-07-13"
 
 (defun windowsp ()
   (eql window-system 'w32))
+
+(defun linuxp ()
+  (eql system-type 'gnu/linux))
