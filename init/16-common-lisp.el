@@ -22,10 +22,8 @@
 (custom-set-faces
  '(secondary-selection ((t (:background "steel blue"))))
  '(slime-repl-inputed-output-face ((t (:foreground "chocolate")))))
-(defun my-add-pretty-lambda ()
-  (setq prettify-symbols-alist
-        '(("lambda" . 955))))
 (add-hook 'lisp-mode-hook #'my-add-pretty-lambda)
+(add-hook 'slime-repl-mode #'my-add-pretty-lambda)
 
 ;;; auto completion
 (require-or-install 'ac-slime)
