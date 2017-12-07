@@ -4,3 +4,4 @@
 !/init.el
 /*.elc
 /init/rtags*
+/init/99-local-config.el
