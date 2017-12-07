@@ -51,6 +51,10 @@
   (load custom-file))
 
 
+;;; site lisp
+(add-to-list 'load-path (expand-file-name "site-lisp/" *emacs-config-directory*))
+
+
 ;;; init-loader
 (require-or-install 'init-loader)
 

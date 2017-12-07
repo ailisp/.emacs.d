@@ -1,0 +1,3 @@
+;;;; lass
+
+(require 'lass)

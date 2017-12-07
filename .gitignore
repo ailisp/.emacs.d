@@ -2,6 +2,7 @@
 !.gitignore
 !/init/
 !/init.el
+!/site-lisp/
 /*.elc
 /init/rtags*
 /init/99-local-config.el
