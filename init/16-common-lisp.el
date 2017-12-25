@@ -34,4 +34,5 @@
 
 ;;; paredit
 (require-or-install 'paredit)
-(add-hook 'lisp-mode-hook #'enable-paredit-mode)
+(eval-after-load "paredit"
+  '(add-hook 'lisp-mode-hook #'enable-paredit-mode))
