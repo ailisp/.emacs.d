@@ -4,10 +4,16 @@
 (load "~/quicklisp/slime-helper.el")
 (load "~/quicklisp/clhs-use-local.el" t)
 
-(setq slime-lisp-implementations
-      `((ccl ("ccl") :coding-system utf-8-unix)
-        (ccl-dev ("ccl-dev") :coding-system utf-8-unix)
-        (sbcl ("sbcl") :coding-system utf-8-unix)))
+(when (linuxp)
+  (setq slime-lisp-implementations
+        `((ccl ("ccl") :coding-system utf-8-unix)
+          (ccl-dev ("ccl-dev") :coding-system utf-8-unix)
+          (ccl32 ("ccl32") :coding-system utf-8-unix)
+          (ccl32-dev ("ccl32-dev") :coding-system utf-8-unix)
+          (sbcl ("sbcl") :coding-system utf-8-unix))))
+(when (windowsp)
+  (setq slime-lisp-implementations
+        `((ccl ("ccl.bat") :coding-system utf-8-unix))))
 
 ;;; slime
 (add-hook 'slime-mode-hook
