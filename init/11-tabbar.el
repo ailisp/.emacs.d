@@ -77,6 +77,8 @@ That is, a string used to represent it on the tab bar."
 (add-hook 'after-save-hook 'tabbar-modification-state-change)
 (add-hook 'first-change-hook 'tabbar-modification-state-change)
 
+(require 'cl)
+
 (setq tabbar-buffer-groups-function
       (lambda ()
         "Return the list of group names the current buffer belongs to.
@@ -88,15 +90,17 @@ Return a list of one element based on major mode."
                ;; `compilation-mode'.
                (tabbar-buffer-mode-derived-p
                 major-mode '(comint-mode compilation-mode)))
-           "Misc")
+           "Compilation")
           ((member (buffer-name)
-                   '("*Messages*"))
+                   '("*scratch*"))
+           "Main")
+          ((memq major-mode
+                 '(slime-repl-mode))
+           "Compilation")
+          ((cl-search "*" (buffer-name))
            "Misc")
           ((memq major-mode
                  '(help-mode apropos-mode Info-mode Man-mode))
-           "Misc")
-          ((memq major-mode
-                 '(helm-major-mode))
            "Misc")
           ((memq major-mode
                  '(rmail-mode

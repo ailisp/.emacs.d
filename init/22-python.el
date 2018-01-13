@@ -6,7 +6,8 @@
             (anaconda-mode)
             (anaconda-eldoc-mode)
             (auto-complete-mode -1)
-            (company-mode 1)))
+            (company-mode 1)
+            (add-to-list 'company-backends 'company-anaconda)))
 
-(eval-after-load "company"
-  '(add-to-list 'company-backends 'company-anaconda))
+(define-key 'anaconda-mode-map (kbd "M-,") 'anaconda-mode-go-back)
+(define-key 'company-active-map [tab] 'company-complete-selection)
