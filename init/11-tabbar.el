@@ -77,3 +77,33 @@ That is, a string used to represent it on the tab bar."
 (add-hook 'after-save-hook 'tabbar-modification-state-change)
 (add-hook 'first-change-hook 'tabbar-modification-state-change)
 
+(setq tabbar-buffer-groups-function
+      (lambda ()
+        "Return the list of group names the current buffer belongs to.
+Return a list of one element based on major mode."
+        (list
+         (cond
+          ((or (get-buffer-process (current-buffer))
+               ;; Check if the major mode derives from `comint-mode' or
+               ;; `compilation-mode'.
+               (tabbar-buffer-mode-derived-p
+                major-mode '(comint-mode compilation-mode)))
+           "Misc")
+          ((member (buffer-name)
+                   '("*Messages*"))
+           "Misc")
+          ((memq major-mode
+                 '(help-mode apropos-mode Info-mode Man-mode))
+           "Misc")
+          ((memq major-mode
+                 '(helm-major-mode))
+           "Misc")
+          ((memq major-mode
+                 '(rmail-mode
+                   rmail-edit-mode vm-summary-mode vm-mode mail-mode
+                   mh-letter-mode mh-show-mode mh-folder-mode
+                   gnus-summary-mode message-mode gnus-group-mode
+                   gnus-article-mode score-mode gnus-browse-killed-mode))
+           "Mail")
+          (t
+           "Main")))))
