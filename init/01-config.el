@@ -12,8 +12,7 @@
 
 ;;; Eile open, save and history
 (global-auto-revert-mode 1)
-(require 'saveplace)
-(setq-default save-place t)
+(save-place-mode 1)
 (recentf-mode 1)
 (setq recentf-max-saved-items 3000)
 (setq backup-directory-alist '(("." . "~/.emacs.d/.backups")))

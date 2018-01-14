@@ -7,4 +7,7 @@
 
 (add-hook 'c-mode-common-hook
           (lambda ()
-            (semantic-mode 1)))
+            (semantic-mode 1)
+            (semantic-idle-scheduler-mode 1)
+            (auto-complete-mode -1)
+            (company-mode 1)))
