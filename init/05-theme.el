@@ -5,9 +5,17 @@
   (set-face-attribute
    'default nil
    :family "DejaVu Sans Mono"))
-(set-face-attribute
- 'cursor nil
- :background "sky blue")
+
+;;; For some reason, cursor face doesn't change in new window
+;;; call it after create new frame
+(defun set-cursor-face ()
+  (set-cursor-color "sky blue"))
+(set-cursor-face)
+(add-hook 'after-make-frame-functions
+          (lambda (f)
+            (with-selected-frame f
+              (set-cursor-face))))
+
 (set-face-attribute
  'mode-line-inactive nil
  :background "#435364")

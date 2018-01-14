@@ -12,3 +12,4 @@
 (global-set-key (kbd "<C-M-backspace>")'kill-backward-sexp)
 (global-set-key (kbd "C-x 2") 'split-window-conditional)
 ;; TODO: kill/mark/copy/delete/move backward/forward sexp/char/word/line/inner-sexp
+;; TODO: try replace ecb with popwin+sr-speedbar
