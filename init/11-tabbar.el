@@ -85,11 +85,8 @@ That is, a string used to represent it on the tab bar."
 Return a list of one element based on major mode."
         (list
          (cond
-          ((or (get-buffer-process (current-buffer))
-               ;; Check if the major mode derives from `comint-mode' or
-               ;; `compilation-mode'.
-               (tabbar-buffer-mode-derived-p
-                major-mode '(comint-mode compilation-mode)))
+          ((tabbar-buffer-mode-derived-p
+            major-mode '(comint-mode compilation-mode))
            "Compilation")
           ((memq major-mode
                  '(slime-repl-mode lisp-interaction-mode eshell-mode))
