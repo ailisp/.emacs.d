@@ -91,11 +91,8 @@ Return a list of one element based on major mode."
                (tabbar-buffer-mode-derived-p
                 major-mode '(comint-mode compilation-mode)))
            "Compilation")
-          ((member (buffer-name)
-                   '("*scratch*"))
-           "Main")
           ((memq major-mode
-                 '(slime-repl-mode))
+                 '(slime-repl-mode lisp-interaction-mode eshell-mode))
            "Compilation")
           ((cl-search "*" (buffer-name))
            "Misc")
