@@ -9,7 +9,8 @@
   (semantic-mode 1)
   (semantic-idle-scheduler-mode 1)
   (auto-complete-mode -1)
-  (company-mode 1))
+  (company-mode 1)
+  (hs-minor-mode))
 
 (add-hook 'c-mode-hook 'c/c++-mode-hook)
 (add-hook 'c++-mode-hook 'c/c++-mode-hook)
