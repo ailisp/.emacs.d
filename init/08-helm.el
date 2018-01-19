@@ -19,4 +19,4 @@
  '(helm-ff-dotted-symlink-directory ((t (:background "DimGray" :foreground "font-lock-function-name-face"))))
  '(helm-selection ((t (:background "sky blue" :foreground "#212931" :weight bold))))
  '(helm-source-header ((t (:inherit mode-line-inactive :foreground "white" :weight bold :height 1.3 :family "Sans Serif"))))
- )
+ '(helm-candidate-number ((t (:foreground "yellow")))))
