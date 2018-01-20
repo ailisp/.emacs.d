@@ -28,12 +28,10 @@
   (unless (package-installed-p package)
     (package-install package)))
 
-(defun require-or-install (package &optional &key package-to-install install-action)
+(defun require-or-install (package &optional package-to-install)
   (or (require package nil t)
       (progn
         (package-install-with-refresh (or package-to-install package))
-        (when install-action
-          (funcall install-action))
         (require package))))
 
 (package-initialize)
