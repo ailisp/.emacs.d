@@ -60,3 +60,5 @@
 
 (init-loader-load
  (expand-file-name "init/" *emacs-config-directory*))
+
+(provide 'init)
