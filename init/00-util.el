@@ -26,6 +26,9 @@ Version 2016-07-13"
 (defun linuxp ()
   (eql system-type 'gnu/linux))
 
+(defun macp ()
+  (eql system-type 'darwin))
+
 (defun my-add-pretty-lambda ()
   (setq prettify-symbols-alist
         '(("lambda" . 955)))
