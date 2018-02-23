@@ -33,3 +33,12 @@ Version 2016-07-13"
   (setq prettify-symbols-alist
         '(("lambda" . 955)))
   (prettify-symbols-mode))
+
+(defun sudo-current-file ()
+  "Edit the file that is associated with the current buffer as root"
+  (interactive)
+  (if (buffer-file-name)
+      (progn
+        (setq file (concat "/sudo:root@localhost:" (buffer-file-name)))
+        (find-file file))
+    (message "Current buffer does not have an associated file.")))
