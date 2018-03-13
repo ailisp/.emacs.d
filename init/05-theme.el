@@ -8,7 +8,8 @@
 (when (macp)
   (set-face-attribute
    'default nil
-   :height 140))
+   :height 140
+   :family "DejaVu Sans Mono"))
 
 ;;; For some reason, cursor face doesn't change in new window
 ;;; call it after create new frame
