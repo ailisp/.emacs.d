@@ -1,2 +1,3 @@
+(require-or-install 'exec-path-from-shell)
 (when (macp)
-  (set-exec-path-from-shell-PATH))
+  (exec-path-from-shell-initialize))

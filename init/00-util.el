@@ -42,9 +42,3 @@ Version 2016-07-13"
         (setq file (concat "/sudo:root@localhost:" (buffer-file-name)))
         (find-file file))
     (message "Current buffer does not have an associated file.")))
-
-;; fix the PATH variable, for Mac
-(defun set-exec-path-from-shell-PATH ()
-  (let ((path-from-shell (shell-command-to-string "TERM=vt100 $SHELL -i -c 'echo $PATH'")))
-    (setenv "PATH" path-from-shell)
-    (setq exec-path (split-string path-from-shell path-separator))))
