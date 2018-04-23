@@ -4,6 +4,7 @@
 (require-or-install 'cljsbuild-mode)
 (require-or-install 'elein)
 
+(add-hook 'clojure-mode-hook 'paredit-mode)
 (add-hook 'clojure-mode-hook 'subword-mode)
 
 (require-or-install 'cider)
@@ -13,3 +14,12 @@
 
 (require-or-install 'flycheck-clojure)
 (flycheck-clojure-setup)
+
+(require-or-install 'ac-cider)
+(add-hook 'cider-mode-hook 'ac-flyspell-workaround)
+(add-hook 'cider-mode-hook 'ac-cider-setup)
+(add-hook 'cider-repl-mode-hook 'ac-cider-setup)
+(eval-after-load "auto-complete"
+  '(progn
+     (add-to-list 'ac-modes 'cider-mode)
+     (add-to-list 'ac-modes 'cider-repl-mode)))
