@@ -42,3 +42,9 @@ Version 2016-07-13"
         (setq file (concat "/sudo:root@localhost:" (buffer-file-name)))
         (find-file file))
     (message "Current buffer does not have an associated file.")))
+
+(defun align (start end)
+  "Align columns by whitespace"
+  (interactive "r")
+  (align-regexp start end
+                "\\(\\s-*\\)\\s-" 1 0 t))

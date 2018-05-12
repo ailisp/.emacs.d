@@ -20,7 +20,8 @@
 ;;; Editing
 (setq-default line-spacing 0.1)
 (show-paren-mode 1)
-(cua-mode t)
+(delete-selection-mode 1)
+
 (setq-default tab-width 4
               indent-tabs-mode nil)
 (add-hook 'prog-mode-hook
