@@ -32,7 +32,6 @@
  '(secondary-selection ((t (:background "steel blue"))))
  '(slime-repl-inputed-output-face ((t (:foreground "chocolate")))))
 (add-hook 'lisp-mode-hook #'my-add-pretty-lambda)
-(add-hook 'slime-repl-mode #'my-add-pretty-lambda)
 
 ;;; auto completion
 (require-or-install 'ac-slime)
@@ -44,4 +43,15 @@
 ;;; paredit
 (require-or-install 'paredit)
 (eval-after-load "paredit"
-  '(add-hook 'lisp-mode-hook #'enable-paredit-mode))
+  `(progn
+     (add-hook 'lisp-mode-hook #'enable-paredit-mode)
+     (add-hook 'slime-repl-mode-hook #'enable-paredit-mode)))
+
+;;; rainbow-delimiters
+(require-or-install 'rainbow-delimiters)
+(add-hook 'lisp-mode-hook #'rainbow-delimiters-mode)
+
+;; rainbow-delimiters and pretty lambda cause coloring not correct in
+;; slime-repl manual call M-x font-lock-mode can fix but call that in
+;; function in lisp doesn't work
+;; (add-hook 'slime-repl-mode-hook #'rainbow-delimiters-mode)
