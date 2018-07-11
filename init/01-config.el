@@ -9,6 +9,7 @@
 (setq use-dialog-box nil)
 (toggle-scroll-bar nil)
 (defalias 'message-box 'message)
+(winner-mode 1)
 
 ;;; Eile open, save and history
 (global-auto-revert-mode 1)
