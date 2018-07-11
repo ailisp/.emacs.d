@@ -5,11 +5,11 @@
 (set-face-attribute 'ecb-tag-header-face nil
                     :background  "#008b8b")
 
-(global-set-key (kbd "C-x 3")
-                '(lambda ()
-                   (interactive)
-                   (when ecb-minor-mode
-                     (ecb-toggle-ecb-windows))))
+;; (global-set-key (kbd "C-x 3")
+;;                 '(lambda ()
+;;                    (interactive)
+;;                    (when ecb-minor-mode
+;;                      (ecb-toggle-ecb-windows))))
 
 (global-set-key (kbd "C-x C-3")
                 '(lambda ()
@@ -54,4 +54,3 @@
  '(ecb-source-path (quote ("~")))
  '(ecb-tip-of-the-day nil)
  '(ecb-windows-width 0.2))
- 
