@@ -10,22 +10,22 @@
 (global-set-key (kbd "C-x 3") 'sr-speedbar-toggle)
 (global-set-key (kbd "C-o") 'sr-speedbar-select-window)
 
-(defvar speedbar-need-refresh nil)
+;; (defvar speedbar-need-refresh nil)
 
-(add-hook 'buffer-list-update-hook 'check-refresh-speedbar)
+;; (add-hook 'buffer-list-update-hook 'check-refresh-speedbar)
 
-(defun check-refresh-speedbar ()
-  (when (and (sr-speedbar-exist-p)
-             (or (string= "buffers" speedbar-initial-expansion-list-name)
-                 (string= "quick buffers" speedbar-initial-expansion-list-name)))
-    (setq speedbar-need-refresh t)))
+;; (defun check-refresh-speedbar ()
+;;   (when (and (sr-speedbar-exist-p)
+;;              (or (string= "buffers" speedbar-initial-expansion-list-name)
+;;                  (string= "quick buffers" speedbar-initial-expansion-list-name)))
+;;     (setq speedbar-need-refresh t)))
 
-(add-hook 'speedbar-timer-hook 'my-refresh-speedbar)
+;; (add-hook 'speedbar-timer-hook 'my-refresh-speedbar)
 
-(defun my-refresh-speedbar ()
-  (when speedbar-need-refresh
-    (setq speedbar-need-refresh nil)
-    (speedbar-refresh)))
+;; (defun my-refresh-speedbar ()
+;;   (when speedbar-need-refresh
+;;     (setq speedbar-need-refresh nil)
+;;     (speedbar-refresh)))
 
 (speedbar-add-supported-extension ".lisp")
 (speedbar-add-supported-extension ".clj")
@@ -33,30 +33,18 @@
 (speedbar-add-supported-extension ".go")
 (speedbar-add-supported-extension ".js")
 
-;; (defun speedbar-find-file-in-frame (file)
-;;   "This will load FILE into the speedbar attached frame.
-;; If the file is being displayed in a different frame already, then raise that
-;; frame instead."
-;;   (let* ((buff (find-file ;;-noselect
-;;                 file))
-;; 	 (bwin (get-buffer-window buff 0)))
-;;     (if bwin
-;; 	(progn
-;; 	  (select-window bwin)
-;; 	  (raise-frame (window-frame bwin)))
-;;       (if dframe-power-click
-;; 	  (let ((pop-up-frames t)) (select-window (display-buffer buff)))
-;; 	(if (numberp speedbar-select-frame-method)
-;; 	    (other-frame speedbar-select-frame-method)
-;; 	  (dframe-select-attached-frame speedbar-frame))
-;; 	(switch-to-buffer buff)))))
-;; '(lambda ()
-;;    (interactive)
-;;    (sr-speedbar-toggle)
-;;    (if (sr-speedbar-exist-p)
-;;        (with-current-buffer sr-speedbar-buffer-name
-;;          (setq window-size-fixed 'width))))
+(define-key speedbar-key-map "\C-b"
+  (lambda () (interactive)
+    (speedbar-change-initial-expansion-list "buffers")))
 
+;; not working
+;; (add-hook 'speedbar-mode-hook
+;;           '(lambda ()
+;;              (interactive)
+;;              (local-unset-key "\C-x 2")
+;;              (local-unset-key "\C-x 1")))
+
+;; not working
 ;; (defun resize-speedbar-on-window-size-changed (&optional frame)
 ;;   (when (sr-speedbar-exist-p)
 ;;     (when (or (/= (window-pixel-width-before-size-change)
@@ -78,3 +66,5 @@
 ;;       )))
 
 ;; (add-to-list 'window-size-change-functions #'resize-speedbar-on-window-size-changed)
+
+;; (message "%s" (selected-window))
