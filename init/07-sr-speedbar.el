@@ -8,6 +8,7 @@
 (sr-speedbar-refresh-turn-off)
 
 (global-set-key (kbd "C-x 3") 'sr-speedbar-toggle)
+(global-set-key (kbd "C-o") 'sr-speedbar-select-window)
 
 (defvar speedbar-need-refresh nil)
 
@@ -26,6 +27,29 @@
     (setq speedbar-need-refresh nil)
     (speedbar-refresh)))
 
+(speedbar-add-supported-extension ".lisp")
+(speedbar-add-supported-extension ".clj")
+(speedbar-add-supported-extension ".cljs")
+(speedbar-add-supported-extension ".go")
+(speedbar-add-supported-extension ".js")
+
+;; (defun speedbar-find-file-in-frame (file)
+;;   "This will load FILE into the speedbar attached frame.
+;; If the file is being displayed in a different frame already, then raise that
+;; frame instead."
+;;   (let* ((buff (find-file ;;-noselect
+;;                 file))
+;; 	 (bwin (get-buffer-window buff 0)))
+;;     (if bwin
+;; 	(progn
+;; 	  (select-window bwin)
+;; 	  (raise-frame (window-frame bwin)))
+;;       (if dframe-power-click
+;; 	  (let ((pop-up-frames t)) (select-window (display-buffer buff)))
+;; 	(if (numberp speedbar-select-frame-method)
+;; 	    (other-frame speedbar-select-frame-method)
+;; 	  (dframe-select-attached-frame speedbar-frame))
+;; 	(switch-to-buffer buff)))))
 ;; '(lambda ()
 ;;    (interactive)
 ;;    (sr-speedbar-toggle)
