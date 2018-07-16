@@ -37,6 +37,8 @@
   (lambda () (interactive)
     (speedbar-change-initial-expansion-list "buffers")))
 
+(define-key speedbar-key-map "s" 'fit-window-horizontally)
+
 (defun split-window-conditional ()
   (interactive)
   (unless (eq sr-speedbar-window (selected-window))
@@ -44,27 +46,6 @@
        (split-window-vertically)
      (split-window-horizontally))))
 
-;; not working
-;; (defun resize-speedbar-on-window-size-changed (&optional frame)
-;;   (when (sr-speedbar-exist-p)
-;;     (when (or (/= (window-pixel-width-before-size-change)
-;;                   (window-pixel-width))
-;;               (/= (window-pixel-height-before-size-change)
-;;                   (window-pixel-height)))
-;;       ;; (sr-speedbar-close)
-;;       (with-current-buffer sr-speedbar-buffer-name
-;;         (setq window-size-fixed nil))
-;;       (setq sr-speedbar-width
-;;             (max 30 (min 35 (round (* 0.3 (window-width))))))
-;;       (setq sr-speedbar-max-width
-;;             sr-speedbar-width)
-;;       (with-current-buffer sr-speedbar-buffer-name
-;;         (setq window-size-fixed 'width))
-;;       (setq ring-bell-function nil)
-;;       (ding)
-;;       ;; (sr-speedbar-open)
-;;       )))
-
-;; (add-to-list 'window-size-change-functions #'resize-speedbar-on-window-size-changed)
-
 ;; (message "%s" (selected-window))
+;; (setq ring-bell-function nil)
+;; (ding)

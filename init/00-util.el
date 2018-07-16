@@ -42,3 +42,8 @@ Version 2016-07-13"
   (interactive "r")
   (align-regexp start end
                 "\\(\\s-*\\)\\s-" 1 0 t))
+
+(defun fit-window-horizontally ()
+  (interactive)
+  (let ((fit-window-to-buffer-horizontally t))
+    (fit-window-to-buffer)))
