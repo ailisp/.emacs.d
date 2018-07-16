@@ -5,15 +5,33 @@
 (setq sr-speedbar-width 25)
 (setq sr-speedbar-max-width 25)
 (setq speedbar-use-images nil)
-(setq speedbar-initial-expansion-list-name "files")
+(sr-speedbar-refresh-turn-off)
 
-(global-set-key (kbd "C-x 3")
-                '(lambda ()
-                   (interactive)
-                   (sr-speedbar-toggle)
-                   (when (sr-speedbar-exist-p)
-                     (with-current-buffer sr-speedbar-buffer-name
-                       (setq window-size-fixed 'width)))))
+(global-set-key (kbd "C-x 3") 'sr-speedbar-toggle)
+
+(defvar speedbar-need-refresh nil)
+
+(add-hook 'buffer-list-update-hook 'check-refresh-speedbar)
+
+(defun check-refresh-speedbar ()
+  (when (and (sr-speedbar-exist-p)
+             (or (string= "buffers" speedbar-initial-expansion-list-name)
+                 (string= "quick buffers" speedbar-initial-expansion-list-name)))
+    (setq speedbar-need-refresh t)))
+
+(add-hook 'speedbar-timer-hook 'my-refresh-speedbar)
+
+(defun my-refresh-speedbar ()
+  (when speedbar-need-refresh
+    (setq speedbar-need-refresh nil)
+    (speedbar-refresh)))
+
+;; '(lambda ()
+;;    (interactive)
+;;    (sr-speedbar-toggle)
+;;    (if (sr-speedbar-exist-p)
+;;        (with-current-buffer sr-speedbar-buffer-name
+;;          (setq window-size-fixed 'width))))
 
 ;; (defun resize-speedbar-on-window-size-changed (&optional frame)
 ;;   (when (sr-speedbar-exist-p)
