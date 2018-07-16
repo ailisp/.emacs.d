@@ -37,12 +37,12 @@
   (lambda () (interactive)
     (speedbar-change-initial-expansion-list "buffers")))
 
-;; not working
-;; (add-hook 'speedbar-mode-hook
-;;           '(lambda ()
-;;              (interactive)
-;;              (local-unset-key "\C-x 2")
-;;              (local-unset-key "\C-x 1")))
+(defun split-window-conditional ()
+  (interactive)
+  (unless (eq sr-speedbar-window (selected-window))
+   (if (>= (* 39 (window-height)) (* 17 (window-width)))
+       (split-window-vertically)
+     (split-window-horizontally))))
 
 ;; not working
 ;; (defun resize-speedbar-on-window-size-changed (&optional frame)
