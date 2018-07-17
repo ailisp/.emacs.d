@@ -9,24 +9,26 @@
 (global-set-key (kbd "C-x C-b") 'helm-for-files)
 (helm-mode 1)
 
+(defvar my-helm-window-height 0.3)
+
+(defun my-helm-display-buffer-at-bottom (buffer &optional _resume)
+  (let ((window (or (purpose-display-reuse-window-buffer buffer nil)
+                    (purpose-display-reuse-window-purpose buffer nil)
+                    (purpose-display-at-bottom buffer nil my-helm-window-height))))
+    (if window
+        (progn
+          (select-window window)
+          ;; don't know why, but it doesn't work without `switch-to-buffer'
+          (switch-to-buffer buffer t t))
+      ;; in case the above methods weren't successful, fallback to default
+      ;; helm display function
+      (funcall #'helm-default-display-buffer buffer))))
+
+(setq helm-display-function #'my-helm-display-buffer-at-bottom)
+
 (require-or-install 'helm-smex)
 (global-set-key [remap execute-extended-command] #'helm-smex)
 (global-set-key (kbd "M-X") #'helm-smex-major-mode-commands)
-
-(defun *-popwin-help-mode-off ()
-  "Turn `popwin-mode' off for *Help* buffers."
-  (when (boundp 'popwin:special-display-config)
-    (customize-set-variable 'popwin:special-display-config
-                            (delq 'help-mode popwin:special-display-config))))
-
-(defun *-popwin-help-mode-on ()
-  "Turn `popwin-mode' on for *Help* buffers."
-  (when (boundp 'popwin:special-display-config)
-    (customize-set-variable 'popwin:special-display-config
-                            (add-to-list 'popwin:special-display-config 'help-mode nil #'eq))))
-
-(add-hook 'helm-minibuffer-set-up-hook #'*-popwin-help-mode-off)
-(add-hook 'helm-cleanup-hook #'*-popwin-help-mode-on)
 
 (custom-set-faces
  '(helm-ff-directory ((t (:foreground "white"))))
