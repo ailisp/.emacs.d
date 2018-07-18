@@ -46,6 +46,16 @@
        (split-window-vertically)
      (split-window-horizontally))))
 
+;; Work around purpose load layout
+;; (sr-speedbar-open)
+;; (sr-speedbar-close)
+
+;; ;; Work around purpose rearragne window
+;; (defun sr-speedbar-exist-p ()
+;;   "Return `non-nil' if `sr-speedbar' is exist.
+;; Otherwise return nil."
+;;   (when (get-buffer-window sr-speedbar-buffer-name) t))
+
 ;; (message "%s" (selected-window))
 ;; (setq ring-bell-function nil)
 ;; (ding)
