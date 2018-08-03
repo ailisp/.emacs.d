@@ -1,11 +1,11 @@
 ;; ;;;; Theme
-
-(load-theme 'whiteboard)
+;(require-or-install 'punpun-theme)
+(load-theme 'punpun-light t)
 
 (when (windowsp)
-   (set-face-attribute
-    'default nil
-    :family "DejaVu Sans Mono"))
+  (set-face-attribute
+   'default nil
+   :family "DejaVu Sans Mono"))
 ;; (load-theme 'misterioso)
 ;; (when (windowsp)
 ;;   (set-face-attribute
