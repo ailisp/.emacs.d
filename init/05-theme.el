@@ -1,6 +1,11 @@
 ;; ;;;; Theme
 
 (load-theme 'whiteboard)
+
+(when (windowsp)
+   (set-face-attribute
+    'default nil
+    :family "DejaVu Sans Mono"))
 ;; (load-theme 'misterioso)
 ;; (when (windowsp)
 ;;   (set-face-attribute
