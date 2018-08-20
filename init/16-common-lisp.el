@@ -18,6 +18,8 @@
   (setq slime-lisp-implementations
         `((sbcl ("sbcl") :coding-system utf-8-unix))))
 
+(setq slime-contribs '(slime-fancy slime-indentation))
+
 ;;; slime
 (add-hook 'slime-mode-hook
 	  (lambda ()
