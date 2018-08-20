@@ -85,6 +85,32 @@ That is, a string used to represent it on the tab bar."
     (tabbar-buffer-show-groups nil)
     ))
 
+(defun tabbar-buffer-track-killed ()
+  "Hook run just before actually killing a buffer.
+In Tabbar mode, try to switch to a buffer in the current tab bar,
+after the current buffer has been killed.  Try first the buffer in tab
+after the current one, then the buffer in tab before.  On success, put
+the sibling buffer in front of the buffer list, so it will be selected
+first."
+  (and (eq header-line-format tabbar-header-line-format)
+       (eq tabbar-current-tabset-function 'tabbar-buffer-tabs)
+       (eq (current-buffer) (window-buffer (selected-window)))
+       (let ((bl (tabbar-tab-values (tabbar-current-tabset)))
+             (b  (current-buffer))
+             found sibling)
+         (while (and bl (not found))
+           (if (eq b (car bl))
+               (setq found t)
+             (setq sibling (car bl)))
+           (setq bl (cdr bl)))
+         (when (and (setq sibling (or (car bl) sibling))
+                    (buffer-live-p sibling))
+           ;; Move sibling buffer in front of the buffer list.
+           (save-current-buffer
+             ;; Was (switch-to-buffer sibling)
+             ;; Changed to work around with purpose mode
+             (switch-to-buffer sibling nil t))))))
+
 (tabbar-mode 1)
 
 (defun tabbar-modification-state-change ()
