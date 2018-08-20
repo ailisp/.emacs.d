@@ -6,6 +6,8 @@
 
 (add-hook 'clojure-mode-hook 'paredit-mode)
 (add-hook 'clojure-mode-hook 'subword-mode)
+(define-key paredit-mode-map (kbd "M-[") 'paredit-wrap-square)
+(define-key paredit-mode-map (kbd "M-{") 'paredit-wrap-curly)
 
 (require-or-install 'cider)
 (add-hook 'cider-mode-hook 'eldoc-mode)
