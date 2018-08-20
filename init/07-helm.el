@@ -29,6 +29,7 @@
 (require-or-install 'helm-smex)
 (global-set-key [remap execute-extended-command] #'helm-smex)
 (global-set-key (kbd "M-X") #'helm-smex-major-mode-commands)
+(setq helm-smex-show-bindings t)
 
 (custom-set-faces
  '(helm-ff-directory ((t (:foreground "white"))))

@@ -30,6 +30,7 @@
 (speedbar-add-supported-extension ".lisp")
 (speedbar-add-supported-extension ".clj")
 (speedbar-add-supported-extension ".cljs")
+(speedbar-add-supported-extension ".cljc")
 (speedbar-add-supported-extension ".go")
 (speedbar-add-supported-extension ".js")
 

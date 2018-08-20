@@ -68,6 +68,23 @@ That is, a string used to represent it on the tab bar."
                        (length (tabbar-view
                                 (tabbar-current-tabset)))))))))
 
+(defun tabbar-buffer-select-tab (event tab)
+  "On mouse EVENT, select TAB."
+  (let ((mouse-button (event-basic-type event))
+        (buffer (tabbar-tab-value tab)))
+    (cond
+     ((eq mouse-button 'mouse-2)
+      (pop-to-buffer buffer t))
+     ((eq mouse-button 'mouse-3)
+      (delete-other-windows))
+     (t
+      ;; Was (switch-to-buffer buffer)
+      ;; Changed to work around purpose-mode
+      (switch-to-buffer buffer nil t)))
+    ;; Don't show groups.
+    (tabbar-buffer-show-groups nil)
+    ))
+
 (tabbar-mode 1)
 
 (defun tabbar-modification-state-change ()

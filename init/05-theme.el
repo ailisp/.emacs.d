@@ -10,6 +10,10 @@
    'default nil
    :height 140
    :family "DejaVu Sans Mono"))
+(when (linuxp)
+  (set-face-attribute
+   'default nil
+   :family "Dejavu Sans Mono"))
 
 ;;; For some reason, cursor face doesn't change in new window
 ;;; call it after create new frame
