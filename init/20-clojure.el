@@ -10,6 +10,7 @@
 (define-key paredit-mode-map (kbd "M-{") 'paredit-wrap-curly)
 
 (require-or-install 'cider)
+(setq cider-prompt-for-symbol nil)
 (add-hook 'cider-mode-hook 'eldoc-mode)
 (add-hook 'cider-repl-mode-hook 'subword-mode)
 (add-hook 'cider-repl-mode-hook 'paredit-mode)

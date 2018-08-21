@@ -32,3 +32,6 @@
  'header-line nil
  :background "#506478"
  :foreground "white")
+(set-face-attribute
+ 'region nil
+ :background "#a0c5c4")

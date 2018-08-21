@@ -36,3 +36,6 @@
 (setq mouse-wheel-follow-mouse t) ; scroll window under mouse
 (setq scroll-step 1) ; keyboard scroll one line at a time
 (setq scroll-conservatively 10000) ; not recenter keyboard scroll out of window
+
+;;; Disable C-z
+(global-unset-key (kbd "C-z"))
