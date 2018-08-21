@@ -34,4 +34,5 @@
  :foreground "white")
 (set-face-attribute
  'region nil
- :background "#a0c5c4")
+ :background "#a0c5c4"
+ :foreground "black")
