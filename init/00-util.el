@@ -47,3 +47,9 @@ Version 2016-07-13"
   (interactive)
   (let ((fit-window-to-buffer-horizontally t))
     (fit-window-to-buffer)))
+
+(defun split-window-conditional ()
+  (interactive)
+  (if (>= (* 39 (window-height)) (* 17 (window-width)))
+      (split-window-vertically)
+    (split-window-horizontally)))

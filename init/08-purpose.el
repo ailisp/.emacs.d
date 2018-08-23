@@ -23,7 +23,7 @@
 
 (purpose-x-popwin-setup)
 (define-key purpose-mode-map (kbd "C-z") 'purpose-x-popwin-close-windows)
-;; (add-to-list 'purpose-x-popwin-major-modes 'helm-mode)
+;; (add-to-list 'purpose-x-popwin-major-modes 'xxx-mode)
 ;; purpose-x-popwin-buffer-names purpose-x-popwin-buffer-name-regexps
 ;; (purpose-x-popwin-update-conf)
 

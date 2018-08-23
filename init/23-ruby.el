@@ -13,7 +13,7 @@
 (add-hook 'robe-mode-hook 'ac-robe-setup)
 
 (require-or-install 'yari)
-(define-key ruby-mode-map (kbd "C-c C-d") 'yari-helm)
+;; (define-key ruby-mode-map (kbd "C-c C-d") 'yari-helm)
 
 (require-or-install 'goto-gem)
 (require-or-install 'bundler)
