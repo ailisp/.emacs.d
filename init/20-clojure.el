@@ -6,7 +6,7 @@
 
 (add-hook 'clojure-mode-hook 'subword-mode)
 
-(require-or-install 'paredit-mode)
+(require-or-install 'paredit)
 (add-hook 'clojure-mode-hook 'paredit-mode)
 (define-key paredit-mode-map (kbd "M-[") 'paredit-wrap-square)
 (define-key paredit-mode-map (kbd "M-{") 'paredit-wrap-curly)
