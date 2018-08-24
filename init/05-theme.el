@@ -28,11 +28,14 @@
 (set-face-attribute
  'mode-line-inactive nil
  :background "#435364")
-(set-face-attribute
- 'header-line nil
- :background "#506478"
- :foreground "white")
+;; (set-face-attribute
+;;  'header-line nil
+;;  :background "#506478"
+;;  :foreground "white")
 (set-face-attribute
  'region nil
  :background "#a0c5c4"
  :foreground "black")
+(set-face-attribute
+ 'font-lock-constant-face nil
+ :foreground "#b6e6fc")

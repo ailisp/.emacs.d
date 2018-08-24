@@ -24,3 +24,11 @@
 (counsel-projectile-mode)
 (define-key projectile-mode-map (kbd "C-x p") 'projectile-command-map)
 (define-key projectile-command-map (kbd "g") 'counsel-projectile-rg)
+
+(set-face-attribute
+ 'ivy-minibuffer-match-face-3 nil
+ :background "#777777")
+
+(set-face-attribute
+ 'ivy-minibuffer-match-face-4 nil
+ :background "#777777")
