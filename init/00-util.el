@@ -10,7 +10,7 @@ Version 2016-07-13"
     (fill-region start end)))
 
 (defun kill-backward-sexp ()
-  (interactive)
+  (interactive)/home/bo/.emacs.d/init/01-config.el
   (backward-sexp)
   (kill-sexp))
 

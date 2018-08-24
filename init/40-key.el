@@ -11,9 +11,10 @@
 (global-set-key (kbd "C-c m") 'mark-sexp)
 (global-set-key (kbd "<C-M-backspace>")'kill-backward-sexp)
 (global-set-key (kbd "C-x 2") 'split-window-conditional)
-
+(global-set-key (kbd "C-g") 'keyboard-escape-quit)
 ;;; Local keys for builtin modes
 (define-key hs-minor-mode-map (kbd "C-c h") 'hs-toggle-hiding)
 
 ;; TODO: kill/mark/copy/delete/move backward/forward sexp/char/word/line/inner-sexp
 ;; TODO: try replace ecb with popwin+sr-speedbar
+/home/bo/.emacs.d/init/01-config.el
