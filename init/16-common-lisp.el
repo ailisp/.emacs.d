@@ -47,11 +47,6 @@
 (add-hook 'lisp-mode-hook 'smartparens-strict-mode)
 (add-hook 'slime-repl-mode-hook 'smartparens-strict-mode)
 
-;;; rainbow-delimiters
-(require-or-install 'rainbow-delimiters)
-(add-hook 'lisp-mode-hook #'rainbow-delimiters-mode)
-
-;; rainbow-delimiters and pretty lambda cause coloring not correct in
-;; slime-repl manual call M-x font-lock-mode can fix but call that in
-;; function in lisp doesn't work
-;; (add-hook 'slime-repl-mode-hook #'rainbow-delimiters-mode)
+;; pretty lambda cause coloring not correct in slime-repl manual call
+;; M-x font-lock-mode can fix but call that in function in lisp
+;; doesn't work
