@@ -6,7 +6,6 @@
 
 (add-hook 'clojure-mode-hook 'subword-mode)
 
-
 (require-or-install 'cider)
 (setq cider-prompt-for-symbol nil)
 (add-hook 'cider-mode-hook 'eldoc-mode)
