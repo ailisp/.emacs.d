@@ -22,7 +22,6 @@
 (setq-default line-spacing 0.1)
 (show-paren-mode 1)
 (delete-selection-mode 1)
-
 (setq-default tab-width 4
               indent-tabs-mode nil)
 (add-hook 'prog-mode-hook
@@ -36,6 +35,11 @@
 (setq mouse-wheel-follow-mouse t) ; scroll window under mouse
 (setq scroll-step 1) ; keyboard scroll one line at a time
 (setq scroll-conservatively 10000) ; not recenter keyboard scroll out of window
+(require 'pixel-scroll)
+(pixel-scroll-mode)
 
-;;; Disable C-z
+;;; Default behaviors
 (global-unset-key (kbd "C-z"))
+(global-set-key (kbd "C-g") 'keyboard-escape-quit)
+(global-set-key (kbd "C-x 2") 'split-window-conditional)
+(global-set-key (kbd "C-x k") 'kill-this-buffer)

@@ -1,12 +1,3 @@
-;;;; Theme, font and some tweak in UI
-
-(when (or (linuxp) (macp))
-  (require-or-install 'yascroll)
-  (global-yascroll-bar-mode 1))
-
-(require 'pixel-scroll)
-(pixel-scroll-mode)
-
 (require-or-install 'telephone-line)
 (setq telephone-line-lhs
   '((accent . (telephone-line-vc-segment

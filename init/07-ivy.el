@@ -36,6 +36,7 @@
 (counsel-mode 1)
 (global-set-key (kbd "C-x C-b") 'counsel-locate)
 (global-set-key (kbd "C-x g") 'counsel-rg)
+(defalias 'rg 'counsel-rg)
 
 ;;; Though builtin projectile with ivy completion source mostly works, it
 ;;; doesn't work with ripgrep-projectile. Luckilly counsel-projectile works.
