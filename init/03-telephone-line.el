@@ -1,6 +1,7 @@
 (require-or-install 'telephone-line)
 (setq telephone-line-lhs
-      '((accent . (telephone-line-buffer-segment))
+      '((accent . (telephone-line-buffer-segment
+                   telephone-line-position-segment))
         (nil    . (telephone-line-major-mode-segment))))
 
 (setq telephone-line-rhs
