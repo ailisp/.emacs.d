@@ -1,6 +1,8 @@
 ;;;; Clojure and ClojureScript
 
 (require-or-install 'clojure-mode)
+(add-hook 'clojure-mode-hook 'page-break-lines-mode)
+
 (require-or-install 'cljsbuild-mode)
 (require-or-install 'elein)
 
@@ -27,6 +29,7 @@
   (yas-minor-mode 1)
   (cljr-add-keybindings-with-prefix "C-c r"))
 (add-hook 'clojure-mode-hook 'enable-clj-refactor)
+
 
 ;; TODO: need some config to make flycheck working
 ;; (require-or-install 'flycheck-clojure)
