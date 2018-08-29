@@ -19,7 +19,7 @@
 (define-key smartparens-mode-map (kbd "M-}") (lambda () (interactive) (sp-rewrap-sexp '("{" . "}"))))
 (define-key smartparens-mode-map (kbd "M-]") (lambda () (interactive) (sp-rewrap-sexp '("[" . "]"))))
 (define-key smartparens-mode-map (kbd "M-[") 'sp-wrap-square)
-(define-key smartparens-mode-map (kbd "M-]") 'sp-wrap-curly)
+(define-key smartparens-mode-map (kbd "M-{") 'sp-wrap-curly)
 (define-key smartparens-mode-map (kbd "C-M-<backspace>") 'sp-backward-kill-sexp)
 (define-key smartparens-mode-map (kbd "C-M-t") 'sp-transpose-sexp)
 (define-key smartparens-mode-map (kbd "C-M-k") 'sp-kill-sexp)
