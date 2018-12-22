@@ -13,7 +13,8 @@
           (sbcl ("sbcl") :coding-system utf-8-unix))))
 (when (windowsp)
   (setq slime-lisp-implementations
-        `((ccl ("ccl.bat") :coding-system utf-8-unix))))
+        `((sbcl ("sbcl") :coding-system utf-8-unix)
+          (ccl ("ccl.bat") :coding-system utf-8-unix))))
 (when (macp)
   (setq slime-lisp-implementations
         `((sbcl ("sbcl") :coding-system utf-8-unix))))
