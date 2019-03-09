@@ -3,6 +3,7 @@
 (require-or-install 'tabbar)
 
 ;;; Tabbar settings
+;;; These faces are acceptable with both dark and light themes
 (set-face-attribute
  'tabbar-default nil
  :height 0.9

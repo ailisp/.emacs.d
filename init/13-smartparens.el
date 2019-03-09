@@ -4,15 +4,6 @@
 (setq sp-show-pair-from-inside t)
 (show-smartparens-global-mode)
 
-;; SEdit mimic
-(set-face-attribute
- 'sp-pair-overlay-face nil
- :inherit nil
- :background "#415160")
-(set-face-attribute
- 'sp-show-pair-match-content-face nil
- :inherit 'sp-pair-overlay-face)
-
 (global-set-key (kbd "<f8>") 'smartparens-strict-mode)
 (sp-use-paredit-bindings)
 (define-key smartparens-mode-map (kbd "M-)") (lambda () (interactive) (sp-rewrap-sexp '("(" . ")"))))

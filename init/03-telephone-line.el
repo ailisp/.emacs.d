@@ -21,13 +21,4 @@
                               'mouse-1 (lambda ()
                                          (interactive)
                                          (counsel-projectile-switch-project))))))
-(set-face-attribute
- 'telephone-line-accent-active nil
- :background "#43655d")
-(set-face-attribute
- 'telephone-line-projectile nil
- :inherit nil)
-(set-face-attribute
- 'telephone-line-accent-inactive nil
- :background "#435364")
 (telephone-line-mode 1)

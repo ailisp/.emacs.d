@@ -1,5 +1,7 @@
 /*
 !.gitignore
+!bo-dark-theme.el
+!bo-light-theme.el
 !/init/
 !/init.el
 !/site-lisp/

@@ -32,9 +32,6 @@
   `(define-key slime-prefix-map (kbd "M-h") 'slime-documentation-lookup))
 
 ;;; faces
-(custom-set-faces
- '(secondary-selection ((t (:background "steel blue"))))
- '(slime-repl-inputed-output-face ((t (:foreground "chocolate")))))
 (add-hook 'lisp-mode-hook 'my-add-pretty-lambda)
 
 ;;; auto completion

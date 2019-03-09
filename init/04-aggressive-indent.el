@@ -1,2 +1,2 @@
 (require-or-install 'aggressive-indent)
-(add-hook 'prog-mode-hook 'aggressive-indent-mode)
+(add-hook 'lisp-mode-hook 'aggressive-indent-mode)
