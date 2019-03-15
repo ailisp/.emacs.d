@@ -2,6 +2,7 @@
 !.gitignore
 !bo-dark-theme.el
 !bo-light-theme.el
+!opam-user-setup.el
 !/init/
 !/init.el
 !/site-lisp/
