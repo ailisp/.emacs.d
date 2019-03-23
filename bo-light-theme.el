@@ -57,7 +57,17 @@
  '(next-error ((t (:inherit region))))
  '(query-replace ((t (:inherit (isearch)))))
 
- ;;; slime
+  ;;; company
+ '(company-preview ((t (:inherit (company-tooltip-selection company-tooltip)))))
+ '(company-preview-common ((t (:inherit company-tooltip-common-selection))))
+ '(company-scrollbar-bg ((t (:background "wheat"))))
+ '(company-scrollbar-fg ((t (:background "darkred"))))
+ '(company-tooltip ((t (:background "cornsilk"))))
+ '(company-tooltip-annotation ((t (:foreground "firebrick4"))))
+ '(company-tooltip-common ((t (:foreground "darkred"))))
+ '(company-tooltip-selection ((t (:background "light blue"))))
+
+  ;;; slime
  '(slime-repl-inputed-output-face ((t (:foreground "chocolate"))))
 
  ;;; avy

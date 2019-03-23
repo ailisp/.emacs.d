@@ -48,11 +48,10 @@
  '(query-replace ((t (:inherit (isearch)))))
 
  ;;; company
- '(company-preview ((t :inherit ac-completion-face)))
- '(company-preview-common ((t :inherit company-preview)))
+ '(company-preview ((t (:foreground "darkgray" :underline t))))
+ '(company-preview-common ((t (:inherit company-preview))))
  '(company-scrollbar-bg ((t (:background "#6c829c"))))
  '(company-scrollbar-fg ((t (:background "#556980"))))
- '(company-template-field ((t (:background "#415061"))))
  '(company-tooltip ((t (:inherit default :background "#415061"))))
  '(company-tooltip-annotation ((t (:inherit font-lock-builtin-face))))
  '(company-tooltip-common ((t (:inherit font-lock-builtin-face))))
