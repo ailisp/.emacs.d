@@ -49,8 +49,8 @@
 ;;; visual tweak to make fuzzy match not too colorful
 (set-face-attribute
  'ivy-minibuffer-match-face-3 nil
- :background "#777777")
+ :inherit 'ivy-minibuffer-match-face-2)
 
 (set-face-attribute
  'ivy-minibuffer-match-face-4 nil
- :background "#777777")
+ :inherit 'ivy-minibuffer-match-face-2)
