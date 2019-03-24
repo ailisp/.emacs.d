@@ -19,8 +19,6 @@
   (setq slime-lisp-implementations
         `((sbcl ("sbcl") :coding-system utf-8-unix))))
 
-(setq slime-contribs '(slime-fancy slime-indentation))
-
 ;;; slime
 (add-hook 'slime-mode-hook
 	  (lambda ()
@@ -35,11 +33,8 @@
 (add-hook 'lisp-mode-hook 'my-add-pretty-lambda)
 
 ;;; auto completion
-(require-or-install 'ac-slime)
-(add-hook 'slime-mode-hook 'set-up-slime-ac)
-(add-hook 'slime-repl-mode-hook 'set-up-slime-ac)
-(eval-after-load "auto-complete"
-  '(add-to-list 'ac-modes 'slime-repl-mode))
+(require-or-install 'slime-company)
+(setq slime-contribs '(slime-fancy slime-indentation slime-company))
 
 ;;; smartparens
 (add-hook 'lisp-mode-hook 'smartparens-strict-mode)

@@ -6,8 +6,6 @@
           (lambda ()
             (anaconda-mode)
             (anaconda-eldoc-mode)
-            (auto-complete-mode -1)
-            (company-mode 1)
             (add-to-list 'company-backends 'company-anaconda)
             (py-autopep8-enable-on-save)))
 

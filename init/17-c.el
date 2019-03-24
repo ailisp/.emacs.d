@@ -26,8 +26,6 @@
 (defun c/c++-mode-hook ()
   (semantic-mode 1)
   (semantic-idle-scheduler-mode 1)
-  (auto-complete-mode -1)
-  (company-mode 1)
   (hs-minor-mode)
   (define-key c-mode-map (kbd "M-.") 'my-c/c++-go-to-definition)
   (define-key c-mode-map (kbd "M-,") 'my-c/c++-go-back)
