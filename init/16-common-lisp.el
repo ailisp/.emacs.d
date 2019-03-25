@@ -35,6 +35,7 @@
 ;;; auto completion
 (require-or-install 'slime-company)
 (setq slime-contribs '(slime-fancy slime-indentation slime-company))
+(slime-company-init)
 
 ;;; smartparens
 (add-hook 'lisp-mode-hook 'smartparens-strict-mode)
