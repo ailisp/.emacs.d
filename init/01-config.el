@@ -40,6 +40,6 @@
 
 ;;; Default behaviors
 (global-unset-key (kbd "C-z"))
-(global-set-key (kbd "C-g") 'keyboard-escape-quit)
+;; (global-set-key (kbd "C-g") 'keyboard-escape-quit)
 (global-set-key (kbd "C-x 2") 'split-window-conditional)
 (global-set-key (kbd "C-x k") 'kill-this-buffer)
