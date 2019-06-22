@@ -7,7 +7,7 @@
 (fset 'yes-or-no-p 'y-or-n-p)
 (setq ring-bell-function 'ignore)
 (setq use-dialog-box nil)
-(toggle-scroll-bar nil)
+(scroll-bar-mode -1)
 (defalias 'message-box 'message)
 (winner-mode 1)
 
@@ -40,6 +40,6 @@
 
 ;;; Default behaviors
 (global-unset-key (kbd "C-z"))
-(global-set-key (kbd "C-g") 'keyboard-escape-quit)
+;; (global-set-key (kbd "C-g") 'keyboard-escape-quit)
 (global-set-key (kbd "C-x 2") 'split-window-conditional)
 (global-set-key (kbd "C-x k") 'kill-this-buffer)

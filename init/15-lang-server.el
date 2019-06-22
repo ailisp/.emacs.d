@@ -1,0 +1,7 @@
+(require-or-install 'lsp-mode)
+(require-or-install 'flycheck)
+(require-or-install 'lsp-ui)
+(require-or-install 'company-lsp)
+(require-or-install 'dap-mode)
+(dap-mode 1)
+(dap-ui-mode 1)

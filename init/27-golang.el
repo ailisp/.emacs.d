@@ -17,12 +17,7 @@
   (local-set-key (kbd "M-]") 'next-error)         ; Go to next error (or msg)
   (local-set-key (kbd "M-[") 'previous-error)     ; Go to previous error or msg
 
-  ;; Misc go stuff
-  (auto-complete-mode 1))                         ; Enable auto-complete mode
+  )
 
 ;; Connect go-mode-hook with the function we just defined
 (add-hook 'go-mode-hook 'my-go-mode-hook)
-
-;; Ensure the go specific autocomplete is active in go-mode.
-(with-eval-after-load 'go-mode
-  (require-or-install 'go-autocomplete))

@@ -37,6 +37,7 @@
 (global-set-key (kbd "C-x C-b") 'counsel-locate)
 (global-set-key (kbd "C-x g") 'counsel-rg)
 (defalias 'rg 'counsel-rg)
+(setcdr (assoc 'counsel-M-x ivy-initial-inputs-alist) "")
 
 ;;; Though builtin projectile with ivy completion source mostly works, it
 ;;; doesn't work with ripgrep-projectile. Luckilly counsel-projectile works.
@@ -48,8 +49,8 @@
 ;;; visual tweak to make fuzzy match not too colorful
 (set-face-attribute
  'ivy-minibuffer-match-face-3 nil
- :background "#777777")
+ :inherit 'ivy-minibuffer-match-face-2)
 
 (set-face-attribute
  'ivy-minibuffer-match-face-4 nil
- :background "#777777")
+ :inherit 'ivy-minibuffer-match-face-2)
