@@ -29,10 +29,12 @@
     (package-install package)))
 
 (defun require-or-install (package &optional package-to-install)
-  (or (require package nil t)
-      (progn
-        (package-install-with-refresh (or package-to-install package))
-        (require package))))
+       (or (require package nil t)
+           (progn
+            (package-install-with-refresh (or package-to-install package))
+            (require package))))
+
+;; (setq gnutls-algorithm-priority "NORMAL:-VERS-TLS1.3")
 
 (package-initialize)
 

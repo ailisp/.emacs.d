@@ -1,12 +1,15 @@
 ;;;; common lisp
 
 ;;; The path to lisp and slime
-(load "~/quicklisp/slime-helper.el")
-(load "~/quicklisp/clhs-use-local.el" t)
+
+;; (load "~/quicklisp/slime-helper.el")
+;; (load "~/quicklisp/clhs-use-local.el" t)
+(load (expand-file-name "~/.roswell/helper.el"))
 
 (when (linuxp)
   (setq slime-lisp-implementations
-        `((ccl ("ccl") :coding-system utf-8-unix)
+        `((ros ("ros" "-Q" "run"))
+          (ccl ("ccl") :coding-system utf-8-unix)
           (ccl-dev ("ccl-dev") :coding-system utf-8-unix)
           (ccl32 ("ccl32") :coding-system utf-8-unix)
           (ccl32-dev ("ccl32-dev") :coding-system utf-8-unix)
